@@ -3,4 +3,4 @@
   to = "http://tourestaapi.runasp.net/:splat"
   status = 200
   force = true
-  headers = {X-Forwarded-Proto = "https"}
+  conditions = {Protocol = "https"}
