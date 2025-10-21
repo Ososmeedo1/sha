@@ -1,6 +1,4 @@
 [[redirects]]
-  from = "/api/*"
-  to = "http://tourestaapi.runasp.net/:splat"
+  from = "/*"
+  to = "/index.html"
   status = 200
-  force = true
-  conditions = {Protocol = "https"}

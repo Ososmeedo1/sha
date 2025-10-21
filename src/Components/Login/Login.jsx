@@ -19,7 +19,7 @@ export default function Login() {
   async function loginSubmit(values) {
     
     setLoading(true)
-    const data = await axios.post(`/api/AdminAuth/verify-password`, values)
+    const data = await axios.post(`https://corsproxy.io/?http://tourestaapi.runasp.net/api/AdminAuth/verify-password`, values)
     .catch((error) => {
       setApiError(error.response.data.message);
       setLoading(false);
