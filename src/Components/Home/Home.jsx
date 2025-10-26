@@ -1,8 +1,15 @@
 import React from 'react'
 import style from './Home.module.css'
+import Finance from '../Finance/Finance'
+import RecentTrips from '../RecentTrips/RecentTrips'
 
 export default function Home() {
+  
+  
+  
+  
   return <>
-    <h2>Home</h2>
+    <Finance/>
+    <RecentTrips/>
   </>
 }
