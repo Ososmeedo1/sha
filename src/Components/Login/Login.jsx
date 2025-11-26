@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import style from './Login.module.css'
-import logo from './../../assets/finalLogo.png'
+import logo from './../../assets/logo5.png'
 import { useFormik } from 'formik'
 import axios from 'axios'
 import { UserContext } from '../../Context/UserContext.jsx'
