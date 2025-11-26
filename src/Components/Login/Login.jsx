@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import style from './Login.module.css'
-import car from '../../assets/car2.svg'
+import logo from './../../assets/finalLogo.png'
 import { useFormik } from 'formik'
 import axios from 'axios'
 import { UserContext } from '../../Context/UserContext.jsx'
@@ -58,7 +58,7 @@ export default function Login() {
 
   return <>
     <section className='h-screen flex items-center'>
-      <div className="container mx-auto bg-blue-400 rounded-2xl shadow-2xl">
+      <div className="container mx-auto bg-[#18208B] rounded-2xl shadow-2xl">
 
         <div className="caption flex">
 
@@ -66,7 +66,7 @@ export default function Login() {
 
           <div className="w-1/2">
             <figure>
-              <img src={car} className='w-full' alt="Logo" />
+              <img src={logo} className='w-full' alt="Logo" />
             </figure>
           </div>
 
@@ -83,7 +83,7 @@ export default function Login() {
               {/* Login title */}
 
               <div className="title text-white w-full text-center rounded-md mb-10">
-                <h2 className='text-4xl font-bold py-3 text-blue-500'>Login</h2>
+                <h2 className='text-4xl font-bold py-3 text-[#0B3D91]'>Login</h2>
               </div>
 
               {apiError ? <div className='bg-red-400 text-white w-full rounded-md mb-10 p-5 font-bold text-center'>{apiError}</div> : null}
@@ -92,18 +92,18 @@ export default function Login() {
                 <form onSubmit={formik.handleSubmit}>
 
                   <label htmlFor="email" className='font-bold text-xl text-neutral-700'>Email</label>
-                  <input type="email" name='email' id='email' onChange={formik.handleChange} onBlur={formik.handleBlur} className='w-full pl-3 bg-neutral-100 rounded-md mt-3 py-2 border-2 border-violet-200 focus:border-violet-500 focus:ring-2 focus:ring-transparent outline-none' />
+                  <input type="email" name='email' id='email' onChange={formik.handleChange} onBlur={formik.handleBlur} className='w-full pl-3 bg-neutral-100 rounded-md mt-3 py-2 border-2 border-blue-200 focus:border-[#0B3D91] focus:ring-2 focus:ring-transparent outline-none' />
                   {formik.touched.email && formik.errors.email ? <div className='text-red-400'>{formik.errors.email}</div> : null}
 
                   <label htmlFor="password" className='font-bold text-xl text-neutral-700 mt-15 block'>Password</label>
-                  <input type="password" name='password' id='password' onChange={formik.handleChange} onBlur={formik.handleBlur} className='w-full pl-3 bg-neutral-100 rounded-md mt-3 py-2 border-2 border-violet-200 focus:border-violet-500 focus:ring-2 focus:ring-transparent outline-none' />
+                  <input type="password" name='password' id='password' onChange={formik.handleChange} onBlur={formik.handleBlur} className='w-full pl-3 bg-neutral-100 rounded-md mt-3 py-2 border-2 border-blue-200 focus:border-[#0B3D91] focus:ring-2 focus:ring-transparent outline-none' />
                   {formik.touched.password && formik.errors.password ? <div className='text-red-400'>{formik.errors.password}</div> : null}
 
                   {loading ?
                     <button type='submit' className='mt-15 w-full py-2 rounded-md font-semibold cursor-pointer bg-blue-500'>
                       <BeatLoader color='#fff' />
                     </button> :
-                    <button type='submit' className='mt-15 bg-transparent border border-blue-400 text-blue-400 w-full py-2 rounded-md font-semibold cursor-pointer transition-all duration-100 hover:bg-blue-500 hover:text-white'>Submit</button>
+                    <button type='submit' className='mt-15 bg-transparent border border-[#0B3D91] text-[#0B3D91] w-full py-2 rounded-md font-semibold cursor-pointer transition-all duration-100 hover:bg-[#0B3D91] hover:text-white'>Submit</button>
                   }
 
                 </form>
