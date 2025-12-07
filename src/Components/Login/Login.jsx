@@ -6,6 +6,7 @@ import axios from 'axios'
 import { UserContext } from '../../Context/UserContext.jsx'
 import { useNavigate } from 'react-router-dom'
 import { BeatLoader } from 'react-spinners'
+import { hashSync } from 'bcryptjs'
 
 export default function Login() {
 
@@ -17,20 +18,22 @@ export default function Login() {
   const navigate = useNavigate();
 
   async function loginSubmit(values) {
-    
+
     setLoading(true)
     const data = await axios.post(`https://corsproxy.io/?http://tourestaapi.runasp.net/api/AdminAuth/verify-password`, values)
-    .catch((error) => {
-      setApiError(error.response.data.message);
-      setLoading(false);
-    })
+      .catch((error) => {
+        setApiError(error.response.data.message);
+        setLoading(false);
+      })
 
-    if (data.data.message == "Login successful") {
-      localStorage.setItem('admin', data.data.token);
-      setToken(data.data.token);
-      navigate('/')
+      console.log(data);
+      
+
+    if (data.data.message == "OTP sent to admin email") {
+      localStorage.setItem('email', values.email);
+      navigate('/otp')
     }
-    
+
   }
 
   function inputsValidation(values) {
@@ -70,13 +73,13 @@ export default function Login() {
             </figure>
           </div>
 
-          
+
 
           {/* Second Main Part */}
 
           <div className="w-1/2 bg-blue-50 rounded-r-2xl border-r-2 flex border-blue-200 justify-center py-5">
 
-          
+
 
             <div className="form w-2/3 mx-auto mt-20">
 
@@ -103,7 +106,7 @@ export default function Login() {
                     <button type='submit' className='mt-15 w-full py-2 rounded-md font-semibold cursor-pointer bg-blue-500'>
                       <BeatLoader color='#fff' />
                     </button> :
-                    <button type='submit' className='mt-15 bg-transparent border border-[#0B3D91] text-[#0B3D91] w-full py-2 rounded-md font-semibold cursor-pointer transition-all duration-100 hover:bg-[#0B3D91] hover:text-white'>Submit</button>
+                    <button type='submit' className='mt-15 bg-transparent border border-[#0B3D91] text-[#0B3D91] w-full py-2 rounded-md font-semibold cursor-pointer transition-all duration-100 hover:bg-blue-800 hover:text-white'>Submit</button>
                   }
 
                 </form>

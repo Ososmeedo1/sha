@@ -31,7 +31,7 @@ export default function RecentTrips() {
 
   const options = {
     cutout: '85%', // inner hole size (controls donut thickness)
-    radius: '100%', // overall chart radius
+    radius: '75%', // overall chart radius
     maintainAspectRatio: true,
     plugins: { legend: { display: false } },
   };
@@ -178,13 +178,13 @@ export default function RecentTrips() {
 
               {/* Title */}
 
-              <div className="title border-b border-gray-200 p-5">
+              <div className="title border-b border-gray-200 p-3">
                 <h2 className='text-gray-500 text-2xl'>Trips Rate</h2>
               </div>
 
               {/* Chart */}
 
-              <div className="info py-10 w-2/3 mx-auto">
+              <div className="info w-2/3 mx-auto">
                 <Doughnut
                   data={data}
                   options={options}
@@ -193,7 +193,7 @@ export default function RecentTrips() {
 
               {/* Documenation for colors */}
 
-              <div className="flex flex-wrap w-full px-5 py-1">
+              <div className="flex flex-wrap w-full px-5 py-2">
                 <div className="w-3/12">
                   <div className="content w-11/12 bg-[#FFF3D6] flex justify-center py-2 rounded-md">
                     <p>Yemen</p>
