@@ -31,8 +31,6 @@ export default function Otp() {
         setOptError(error.response.data.message);
         setLoading(false);
       })
-    console.log(data);
-    setLoading(false);
 
     if (data.data.action == "go_to_dashboard") {
       localStorage.removeItem('email');
@@ -40,8 +38,6 @@ export default function Otp() {
       setToken(data.data.token);
       navigate('/')
     }
-
-    // console.log(value);
 
   }
 
